@@ -1,0 +1,18 @@
+{
+    "name": "project-name",
+    "context": "..",
+    "dockerFile": "../Dockerfile",
+    "remoteUser": "developer",
+    "mounts": ["source=/dev/bus/usb,target=/dev/bus/usb,type=bind"],
+    "customizations": {
+        "vscode": {
+            "extensions": ["dart-code.flutter"],
+            "settings": {
+                "terminal.integrated.shell.linux": null
+            }
+        }
+    },
+    "runArgs": ["--privileged"],
+    "workspaceMount": "source=${localWorkspaceFolder}/workspace,target=/home/developer/workspace,type=bind,consistency=delegated",
+    "workspaceFolder": "/home/developer/workspace"
+}
